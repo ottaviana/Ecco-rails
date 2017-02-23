@@ -1,0 +1,15 @@
+<div class="title">
+   <h1>Ecco</h1>
+</div>
+
+<% @sites.each do |item| %>
+  <hr>
+  <h2><%= item.newspaper %></h2>
+  <a href="<%= item.link %>">
+    <h3><%= item.headline %></h3>
+  </a>
+  <p><%= item.description %></p>
+  <% if item.image_url %>
+    <%= image_tag(item.image_url) %>
+  <% end %>
+<% end %>
