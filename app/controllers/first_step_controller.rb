@@ -16,7 +16,5 @@ class FirstStepController < ApplicationController
      ].map { |e| Ecco::Crawler.new(e).crawl }
 
 
-     @headlines = ["Daily Mail", "Repubblica"]
-
   end
 end

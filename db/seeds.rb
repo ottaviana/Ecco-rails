@@ -5,3 +5,23 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+sites = [
+  :dailymail,
+  :repubblica,
+  :nzz,
+  :guardian,
+  :elpais,
+  :nyt
+].map { |e| Ecco::Crawler.new(e).crawl }
+
+sites.each do |item|
+
+  Article.create(newspaper: item.newspaper,
+                 headline: item.headline,
+                 description: item.description,
+                 link: item.link,
+                 image_url: item.image_url)
+
+end
+
+#binding.pry
