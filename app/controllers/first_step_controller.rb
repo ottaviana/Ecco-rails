@@ -1,21 +1,17 @@
 class FirstStepController < ApplicationController
   def index
+
     #  @sites = [
-    #    Ecco::Crawler.new(:dailymail).crawl,
-    #    Ecco::Crawler.new(:repubblica).crawl,
-    #    Ecco::Crawler.new(:nzz).crawl
-    #  ]
+    #    :dailymail,
+    #    :repubblica,
+    #    :nzz,
+    #    :guardian,
+    #    :elpais,
+    #    :nyt,
+    #    :lemonde
+    #  ].map { |e| Ecco::Crawler.new(e).crawl }
 
-     @sites = [
-       :dailymail,
-       :repubblica,
-       :nzz,
-       :guardian,
-       :elpais,
-       :nyt,
-       :lemonde
-     ].map { |e| Ecco::Crawler.new(e).crawl }
-
-
+    # @sites = [ Article.find_by(newspaper: "The Guardian") ]
+    @sites = Article.all 
   end
 end
