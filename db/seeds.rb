@@ -11,17 +11,19 @@ sites = [
   :nzz,
   :guardian,
   :elpais,
-  :nyt
+  :nyt,
+  :lemonde
 ].map { |e| Ecco::Crawler.new(e).crawl }
 
 sites.each do |item|
-
-  Article.create(newspaper: item.newspaper,
-                 headline: item.headline,
-                 description: item.description,
-                 link: item.link,
-                 image_url: item.image_url)
-
+  existing_article = Article.find_by(headline: item.headline)
+  if existing_article == nil
+    Article.create(newspaper: item.newspaper,
+                   headline: item.headline,
+                   description: item.description,
+                   link: item.link,
+                   image_url: item.image_url)
+  end
 end
 
 #binding.pry

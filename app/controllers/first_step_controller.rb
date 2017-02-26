@@ -12,7 +12,8 @@ class FirstStepController < ApplicationController
        :nzz,
        :guardian,
        :elpais,
-       :nyt
+       :nyt,
+       :lemonde
      ].map { |e| Ecco::Crawler.new(e).crawl }
 
 
