@@ -8,10 +8,12 @@
 
 .newspaper-card {
   border: 1px solid #cecece;
-  padding: 10px 10px;
+  padding: 20px 20px;
+  margin-bottom: 20px;
+  min-height: 500px;
 
   .bg-image {
-    min-height: 150px;
+    min-height: 160px;
     background-size: cover;
   }
   h2 {
@@ -20,6 +22,7 @@
   }
   h3 {
     margin-top: 20px;
+    margin-bottom: 10px;
     font-size: 16px;
   }
 }
