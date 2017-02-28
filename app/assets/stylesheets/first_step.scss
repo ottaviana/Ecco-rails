@@ -5,3 +5,21 @@
   text-align: center;
   font-family: "Gothic", serif;
 }
+
+.newspaper-card {
+  border: 1px solid #cecece;
+  padding: 10px 10px;
+
+  .bg-image {
+    min-height: 150px;
+    background-size: cover;
+  }
+  h2 {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  h3 {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+}

@@ -27,21 +27,5 @@ class FirstStepController < ApplicationController
       Article.order(created_at: :desc).find_by(newspaper: o)
     }
 
-  #   @posts = Article.published
-  #
-  #   respond_to do |format|
-  #     format.html
-  #     format.json { render json:@posts }
-  #   end
-  #
-  #
-  # def month
-  #   @post_by_month = Article.find(:all, :order => "created_at DESC").group_by{ |post| post.created_at.strftime("%B %Y") }
-  #
-  #   respond_to do |format|
-  #     format.html # index.html.erb
-  #     format.json { render json: @posts }
-  #   end
-  # end
  end
 end
