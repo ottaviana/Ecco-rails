@@ -25,11 +25,14 @@
     margin-bottom: 10px;
     font-size: 16px;
   }
-  .button{
-  font-weight: bold;
-  float:right;
+}
 
- }
+.button{
+font-weight: bold;
+float:right;
+margin-left: 0;
+
+
 }
 
 .newspaper-single-card {
@@ -42,4 +45,9 @@
   background-size: cover;
   background-repeat: no-repeat;
   }
+}
+
+.full-article{
+  text-align: justify;
+  text-indent: 50px;
 }

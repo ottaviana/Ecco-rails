@@ -6,7 +6,6 @@
   </div>
 </div>
 
-<div class="large-12 columns">
   <div class="newspaper-single-card">
     <%= image_tag("#{@article.newspaper}.png", :alt => @article.newspaper) %>
       <h1><%= @article.headline %></h1>
@@ -14,5 +13,15 @@
       <div class="bgr-image">
         <img src= "<%= @article.image_url%>"></img>
       </div>
+      <br></br>
+  </div>
+
+<div class="row">
+  <div class="large-6 column">
+    <div class="full-article">
+      <p><%= raw(@article.article.gsub("\n", "<p>")) %></p>
+    </div>
+  </div>
+  <div class="large-6 column">
   </div>
 </div>

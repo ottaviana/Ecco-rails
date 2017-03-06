@@ -4,7 +4,7 @@ module StoryUpdater
 
     sites = [
       :dailymail,
-      :repubblica,
+      :corriere,
       :nzz,
       :guardian,
       :elpais,
@@ -22,7 +22,8 @@ module StoryUpdater
                        headline: item.headline,
                        description: item.description,
                        link: item.link,
-                       image_url: item.image_url)
+                       image_url: item.image_url,
+                       article: item.article)
       rescue Exception => ex
         puts "Failed to crawl/store #{e}: #{ex.message}"
       end

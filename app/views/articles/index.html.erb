@@ -10,16 +10,16 @@
   <% @sites.each do |item| %>
     <div class="column column-block">
       <div class="newspaper-card">
-        <!-- <h2><%= item.newspaper %></h2> -->
-        <%= image_tag("#{item.newspaper}.png", :alt => item.newspaper) %>
 
-        <div class="bg-image" style="background-image: url(<%= asset_url(item.image_url) if item.image_url %>);">
-        </div>
+        <%= image_tag("#{item.newspaper}.png", :alt => item.newspaper)%>
 
-
-        <%= link_to item.link do %>
-          <h3><%= item.headline %></h3>
+        <% if item.image_url %>
+          <div class="bg-image" style="background-image: url(<%= asset_url(item.image_url) %>);"></div>
         <% end %>
+
+          <%= link_to item.link, target: "_blank" do %>
+            <h3><%= item.headline %></h3>
+          <% end %>
 
 
         <p><%= item.description.truncate(300).split(".")[0]+ "."%></p>
@@ -27,6 +27,7 @@
         <%= link_to("Read More", article_path(item.id), class: "button") %>
 
       </div>
+
     </div>
   <% end %>
 </div>
