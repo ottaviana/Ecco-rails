@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170305121150) do
+ActiveRecord::Schema.define(version: 20170309111524) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "newspaper"
@@ -18,9 +18,12 @@ ActiveRecord::Schema.define(version: 20170305121150) do
     t.text     "description"
     t.string   "link"
     t.string   "image_url"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.string   "article"
+    t.string   "translated_headline"
+    t.string   "translated_article"
+    t.string   "translated_description"
   end
 
 end

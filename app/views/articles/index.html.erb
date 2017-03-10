@@ -1,10 +1,12 @@
+<br></br>
 <div class="row">
   <div class="small-12 columns">
     <div class="title">
-       <h1>Ecco</h1>
+       <h1><link href="https://fonts.googleapis.com/css?family=Diplomata+SC" rel="stylesheet">Ecco News</h1>
     </div>
   </div>
 </div>
+<br></br>
 
 <div class="row small-up-1 medium-up-2 large-up-3">
   <% @sites.each do |item| %>
@@ -21,10 +23,18 @@
             <h3><%= item.headline %></h3>
           <% end %>
 
+        <p><%=raw truncate(item.description, length: 200, separator: ".", omission: "...") %></p>
 
-        <p><%= item.description.truncate(300).split(".")[0]+ "."%></p>
+        <div class="row">
+          <div class="columns small-6">
+            <%= link_to("Read More", article_path(item.id), class: "button expanded") %>
+          </div>
+          <div class="columns small-6">
+            <%= link_to("Translate", article_path(item.id), class: "button expanded") %>
+          </div>
+        </div>
 
-        <%= link_to("Read More", article_path(item.id), class: "button") %>
+
 
       </div>
 

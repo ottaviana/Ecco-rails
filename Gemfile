@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'easy_translate'
+# API for translation
 gem 'foundation-rails'
 # Foundation for rails
 gem 'ecco', git: 'https://github.com/ottaviana/gem_ecco.git'

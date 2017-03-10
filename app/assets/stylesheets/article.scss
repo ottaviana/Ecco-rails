@@ -2,15 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .title {
+  background-color: #DAD8D7;
+  padding: 30px 30px;
   text-align: center;
-  font-family: "Gothic", serif;
+  font-family: 'Diplomata SC', cursive;
 }
 
 .newspaper-card {
   border: 1px solid #cecece;
-  padding: 20px 20px;
-  margin-bottom: 20px;
-  min-height: 500px;
+  padding: 30px 30px;
+  margin-bottom: 200px;
+  min-height: 550px;
+  position: relative;
 
   .bg-image {
     min-height: 160px;
@@ -27,13 +30,6 @@
   }
 }
 
-.button{
-font-weight: bold;
-float:right;
-margin-left: 0;
-
-
-}
 
 .newspaper-single-card {
   border: 1px solid #cecece;
