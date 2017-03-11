@@ -7,11 +7,30 @@
 </div>
 
   <div class="newspaper-single-card">
-    <%= image_tag("#{@article.newspaper}.png", :alt => @article.newspaper) %>
-      <h1><%= @article.headline %></h1>
-      <p><%= @article.description%><p>
+
+    <div class="row">
+      <div class="columns small-6">
+        <%= image_tag("#{@article.newspaper}.png", :alt => @article.newspaper) %>
+
+      </div>
+      <div class="columns small-6">
+        <!--<%= link_to("Translate", @article, class: "button expanded") %>-->
+        <a href="/articles/<%= @article.id %>?translated=true" class="button expanded">Translated</a>
+      </div>
+    </div>
+
+      <% if @translated %>
+        <h1><%= @article.translated_headline %></h1>
+        <p><%= @article.translated_description%><p>
+      <% else %>
+        <h1><%= @article.headline %></h1>
+        <p><%= @article.description%><p>
+      <% end %>
+
+
       <div class="bgr-image">
         <img src= "<%= @article.image_url%>"></img>
+      </div>
       </div>
       <br></br>
   </div>
@@ -19,7 +38,12 @@
 <div class="row">
   <div class="large-6 column">
     <div class="full-article">
+      <% if @translated %>
+      <p><%= raw(@article.translated_article.gsub("\n", "<p>")) %></p>
+      <% else %>
       <p><%= raw(@article.article.gsub("\n", "<p>")) %></p>
+      <% end %>
+
     </div>
   </div>
   <div class="large-6 column">

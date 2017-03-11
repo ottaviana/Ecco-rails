@@ -20,21 +20,27 @@
         <% end %>
 
           <%= link_to item.link, target: "_blank" do %>
-            <h3><%= item.headline %></h3>
+
+            <% if params["t"] && item.translated_headline != nil %>
+              <h3><%= item.translated_headline %></h3>
+            <% else %>
+              <h3><%= item.headline %></h3>
+            <% end %>
+
           <% end %>
 
-        <p><%=raw truncate(item.description, length: 200, separator: ".", omission: "...") %></p>
+          <% if params["t"] && item.translated_headline != nil %>
+            <p><%=raw truncate(item.translated_description, length: 200, separator: ".", omission: "...") %></p>
+          <% else %>
+            <p><%=raw truncate(item.description, length: 200, separator: ".", omission: "...") %></p>
+          <% end %>
+
 
         <div class="row">
           <div class="columns small-6">
             <%= link_to("Read More", article_path(item.id), class: "button expanded") %>
           </div>
-          <div class="columns small-6">
-            <%= link_to("Translate", article_path(item.id), class: "button expanded") %>
-          </div>
         </div>
-
-
 
       </div>
 

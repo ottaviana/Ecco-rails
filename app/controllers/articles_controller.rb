@@ -11,9 +11,14 @@ class ArticlesController < ApplicationController
     ].map { |o|
       Article.order(created_at: :desc).find_by(newspaper: o)
     }
-    # @sites = Article.order(created_at: :desc)
- end
- def show
-   @article = Article.find(params[:id])
- end
+  end
+
+  def show
+    @article = Article.find(params[:id])
+    if params[:translated]
+      @translated = true
+    else
+      @translated = false
+    end
+  end
 end
