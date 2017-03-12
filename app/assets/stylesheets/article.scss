@@ -1,11 +1,14 @@
 // Place all the styles related to the FirstStep controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.background{
+background-image: url('/assets/back_g.png');
+background-size: cover;
+
 .title {
-  background-color: #DAD8D7;
   padding: 30px 30px;
   text-align: center;
-  font-family: 'Diplomata SC', cursive;
+  font-family: 'Diplomata SC';
 }
 
 .newspaper-card {
@@ -14,6 +17,8 @@
   margin-bottom: 200px;
   min-height: 550px;
   position: relative;
+  background-color: rgba(255, 255, 255, 0.60);
+  border-radius: 25px;
 
   .bg-image {
     min-height: 160px;
@@ -46,4 +51,8 @@
 .full-article{
   text-align: justify;
   text-indent: 50px;
+}
+}
+.footer{
+  background-color: grey;
 }
