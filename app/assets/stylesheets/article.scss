@@ -1,10 +1,9 @@
 // Place all the styles related to the FirstStep controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.background {
-  background-image: asset-url('back_g.png');
+.background{
   background-size: cover;
-
+}
 .title {
   padding: 30px 30px;
   text-align: center;
@@ -51,8 +50,4 @@
 .full-article{
   text-align: justify;
   text-indent: 50px;
-}
-}
-.footer{
-  background-color: grey;
 }
