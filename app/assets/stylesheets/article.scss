@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .background {
-  background-image: image-url('back_g.png');
+  background-image: asset-url('back_g.png');
   background-size: cover;
 
 .title {
