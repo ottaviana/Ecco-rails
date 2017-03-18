@@ -7,7 +7,8 @@ class ArticlesController < ApplicationController
        #"New York Times",
        "Neue Zürcher Zeitung",
        "Corriere della Sera",
-       "El País"
+       "El País",
+       "The Asahi Shimbun"
     ].map { |o|
       Article.order(created_at: :desc).find_by(newspaper: o)
     }

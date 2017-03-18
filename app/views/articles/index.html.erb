@@ -1,5 +1,32 @@
 <body class='background'
   style="background-image: url(<%= asset_url('back_g.png') %>);">
+  <div id="page">
+    <div class="top-bar-container" data-sticky-container>
+      <div class="sticky" data-sticky data-options="anchor: page; marginTop: 0; stickyOn: small;">
+        <div class="top-bar">
+          <div class="row column">
+            <div class="top-bar-left">
+              <ul class="dropdown menu" data-dropdown-menu>
+                <li class="menu-text">Ecco News</li>
+                <li class="has-submenu">
+                  <a href="#">Genre</a>
+                  <ul class="submenu menu vertical" data-submenu>
+                    <li><a href="#">Main Headlines</a></li>
+                    <li><a href="#">Sport</a></li>
+                    <li><a href="#">Economy</a></li>
+                    <li><a href="#">Fashion</a></li>
+                    <li><a href="#">Gossip
+                    </a></li>
+                  </ul>
+                </li>
+                <li><a href="#">About Ecco</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 <br></br>
 <div class="row">
   <div class="small-12 columns">
@@ -21,17 +48,24 @@
           <div class="bg-image" style="background-image: url(<%= asset_url(item.image_url) %>);"></div>
         <% end %>
 
-          <%= link_to item.link, target: "_blank" do %>
+        <div class="row">
+          <div class="columns small-6">
+            <%= link_to("Translate", href= "/?t=true" , class: "button small") %>
+          </div>
+        </div>
+            <%= link_to item.link, target: "_blank" do %>
+
+
 
             <% if params["t"] && item.translated_headline != nil %>
               <h3><%= item.translated_headline %></h3>
             <% else %>
               <h3><%= item.headline %></h3>
             <% end %>
+            <% end %>
 
-          <% end %>
 
-          <% if params["t"] && item.translated_headline != nil %>
+          <% if params["t"] && item.translated_description != nil %>
             <p><%=raw truncate(item.translated_description, length: 200, separator: ".", omission: "...") %></p>
           <% else %>
             <p><%=raw truncate(item.description, length: 200, separator: ".", omission: "...") %></p>
