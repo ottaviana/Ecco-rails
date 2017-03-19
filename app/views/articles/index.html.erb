@@ -37,6 +37,26 @@
 </div>
 <br></br>
 
+<%
+def show_flag(name)
+  @flag= {
+    "The Guardian"=> "United_Kingdom.png",
+    "Corriere della Sera"=> "Italy.png",
+    "Le Monde" => "France.png",
+    "The Asahi Shimbun" => "Japan.png",
+    "El País" => "Spain.png",
+    "Neue Zürcher Zeitung" => "Switzerland.png",
+    "The Daily Mail" => "United_Kingdom.png"
+  }
+  result = @flag[name]
+  if result
+    return result
+  else
+    return ""
+  end
+end
+%>
+
 <div class="row small-up-1 medium-up-2 large-up-3">
   <% @sites.each do |item| %>
     <div class="column column-block">
@@ -74,16 +94,16 @@
 
         <div class="row">
           <div class="columns small-6">
+            <%= image_tag(show_flag(item.newspaper)) %>
             <%= link_to("Read More", article_path(item.id), class: "button expanded") %>
           </div>
         </div>
+
 
       </div>
 
     </div>
   <% end %>
 </div>
-  <div class="footer">
-  </div>
 
 </body>

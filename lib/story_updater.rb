@@ -16,7 +16,7 @@ module StoryUpdater
       begin
         item = Ecco::Crawler.new(e).crawl
         puts "Crawl of #{e} done"
-        existing_article = Article.find_by(headline: item.headline)
+        existing_article = Article.find_by(newspaper: item.newspaper, headline: item.headline)
         raise 'Article has not changed' unless existing_article == nil
         puts "Updating #{item.newspaper}"
 

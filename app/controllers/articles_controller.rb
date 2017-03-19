@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   def index
-    @sites = [
+    names = [
        "The Guardian",
        "The Daily Mail",
        "Le Monde",
@@ -9,8 +9,13 @@ class ArticlesController < ApplicationController
        "Corriere della Sera",
        "El País",
        "The Asahi Shimbun"
-    ].map { |o|
-      Article.order(created_at: :desc).find_by(newspaper: o)
+    ]
+    @sites = []
+    names.each { |n|
+      tmp = Article.order(created_at: :desc).find_by(newspaper: n)
+      if tmp != nil
+        @sites = @sites + [tmp]
+      end
     }
   end
 
