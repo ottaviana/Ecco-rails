@@ -3,16 +3,17 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .background{
   background-size: cover;
+  padding-top: 50px;
 }
 
 .sticky {
   width: 100%;
 }
 
-.title {
-  padding: 30px 30px;
-  text-align: center;
 
+.title{
+  padding: 20px 20px;
+  text-align: center;
 }
 
 .newspaper-card {
@@ -23,6 +24,17 @@
   position: relative;
   background-color: rgba(255, 255, 255, 0.60);
   border-radius: 25px;
+
+  .flag {
+    width: 50px;
+    height: 50px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 2px;
+    padding-top: 1px;
+    margin-right: 100px;
+
+  }
 
   .bg-image {
     min-height: 160px;

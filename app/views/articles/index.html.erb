@@ -1,6 +1,11 @@
 <body class='background'
   style="background-image: url(<%= asset_url('back_g.png') %>);">
-  <div id="page">
+  <nav class="tab-bar">
+    <div class="left-small"></div>
+    <div class="right tab-bar-section"><!-- I stretch all the way to the right --></div>
+  </nav>
+
+  <!-- <div id="page">
     <div class="top-bar-container" data-sticky-container>
       <div class="sticky" data-sticky data-options="anchor: page; marginTop: 0; stickyOn: small;">
         <div class="top-bar">
@@ -26,12 +31,14 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 <br></br>
 <div class="row">
   <div class="small-12 columns">
-    <div class="title">
-       <h1><link href="https://fonts.googleapis.com/css?family=Diplomata+SC" rel="stylesheet">Ecco News</h1>
+    <div class= "panel">
+      <div class="title">
+        <h1><link href="https://fonts.googleapis.com/css?family=Diplomata+SC" rel="stylesheet">Ecco News</h1>
+      </div>
     </div>
   </div>
 </div>
@@ -61,9 +68,13 @@ end
   <% @sites.each do |item| %>
     <div class="column column-block">
       <div class="newspaper-card">
+        <div class="columns small-6 right">
+            <div class= "flag">
+              <%= image_tag(show_flag(item.newspaper))%>
+            </div>
+        </div>
 
         <%= image_tag("#{item.newspaper}.png", :alt => item.newspaper)%>
-
         <% if item.image_url %>
           <div class="bg-image" style="background-image: url(<%= asset_url(item.image_url) %>);"></div>
         <% end %>
@@ -93,9 +104,8 @@ end
 
 
         <div class="row">
-          <div class="columns small-6">
-            <%= image_tag(show_flag(item.newspaper)) %>
-            <%= link_to("Read More", article_path(item.id), class: "button expanded") %>
+          <div class="columns small-6 left">
+            <%= link_to("Read More", article_path(item.id), class: "button") %>
           </div>
         </div>
 
@@ -104,6 +114,7 @@ end
 
     </div>
   <% end %>
+  </div>
 </div>
 
 </body>

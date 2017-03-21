@@ -1,19 +1,23 @@
-<body class='background'
-  style="background-image: url(<%= asset_url('back_g.png') %>);">
+
 <div class="row">
   <div class="small-12 columns">
+    <div class= "panel">
     <div class="title">
        <h1><link href="https://fonts.googleapis.com/css?family=Diplomata+SC" rel="stylesheet">Ecco News</h1>
     </div>
   </div>
+  </div>
 </div>
+
+<body class='background'
+  style="background-image: url(<%= asset_url('back_g.png') %>);">
 
   <div class="newspaper-single-card">
 
     <div class="row">
       <div class="columns small-6">
         <%= image_tag("#{@article.newspaper}.png", :alt => @article.newspaper) %>
-        
+
       </div>
     </div>
 
