@@ -17,7 +17,6 @@
     <div class="row">
       <div class="columns small-6">
         <%= image_tag("#{@article.newspaper}.png", :alt => @article.newspaper) %>
-
       </div>
     </div>
 
@@ -36,21 +35,54 @@
       </div>
   </div>
 
-<div class="row">
-  <div class="large-6 column">
-    <a href="/articles/<%= @article.id %>?translated=true" class="button expanded">Translate</a>
-    <div class="newspaper-card">
-    <div class="full-article">
-      <% if @translated %>
-      <p><%= raw(@article.translated_article.gsub("\n", "<p>")) %></p>
-      <% else %>
-      <p><%= raw(@article.article.gsub("\n", "<p>")) %></p>
-      <% end %>
-
-    </div>
-    </div>
+  <div class="row">
     <div class="large-6 column">
+      <a href="/articles/<%= @article.id %>?translated=true" class="button expanded">Translate</a>
+      <div class="newspaper-card">
+        <div class="full-article">
+          <% if @translated %>
+            <p><%= raw(@article.translated_article.gsub("\n", "<p>")) %></p>
+          <% else %>
+            <p><%= raw(@article.article.gsub("\n", "<p>")) %></p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+      <div class="medium-6 large-4 column">
+        <div class="panel">
+          <h3>Sidebar</h3>
+
+          <h5>Lorem.</h5>
+          <ul>
+            <li><a href="">Lorem ipsum dolor.</a></li>
+            <li><a href="">Sequi tenetur, odit.</a></li>
+            <li><a href="">Quas, dolor, rerum.</a></li>
+            <li><a href="">Eveniet doloremque, voluptas.</a></li>
+            <li><a href="">Eius, voluptate, inventore.</a></li>
+          </ul>
+
+          <h5>Lorem.</h5>
+          <ul>
+            <li><a href="">Lorem ipsum dolor.</a></li>
+            <li><a href="">Sequi tenetur, odit.</a></li>
+            <li><a href="">Quas, dolor, rerum.</a></li>
+            <li><a href="">Eveniet doloremque, voluptas.</a></li>
+            <li><a href="">Eius, voluptate, inventore.</a></li>
+          </ul>
+
+        </div>
+      </div>
+  </div>
+</body>
+<div class="row">
+  <div class="large-8 columns">
+    <div class="panel">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim voluptatum praesentium voluptas iste, asperiores tempore?</p>
+    </div>
+  </div>
+  <div class="large-4 columns">
+    <div class="panel">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore at vero, voluptatum quasi labore reiciendis?</p>
     </div>
   </div>
 </div>
-</body>
