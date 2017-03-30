@@ -8,7 +8,8 @@ class ArticlesController < ApplicationController
        "Neue Zürcher Zeitung",
        "Corriere della Sera",
        "El País",
-       "The Asahi Shimbun"
+       "The Asahi Shimbun",
+       "Frankfurter Allgemeine"
     ]
     @sites = []
     names.each { |n|

@@ -11,6 +11,7 @@ module StoryUpdater
       :nyt,
       :lemonde,
       :asahi
+      :faz
     ].each { |e|
       puts "Crawling #{e}"
       begin
