@@ -10,7 +10,7 @@ module StoryUpdater
       :elpais,
       :nyt,
       :lemonde,
-      :asahi
+      :asahi,
       :faz
     ].each { |e|
       puts "Crawling #{e}"
