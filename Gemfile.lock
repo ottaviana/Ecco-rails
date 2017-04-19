@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/ottaviana/gem_ecco.git
-  revision: 5cd1786224e9a1603cc67b64132c09d661f46f3c
+  revision: bf9352e1eecb048642a56e8cbdc53ec51ab9b2a4
   specs:
     ecco (0.1.0)
       curb (~> 0.9)
