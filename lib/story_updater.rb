@@ -14,7 +14,11 @@ module StoryUpdater
       :faz,
       :nrc,
       :kommersant,
-      :dagensnyheter
+      :dagensnyheter,
+      :gazzetta,
+      :equipe,
+      :sportes,
+      :aftenposten
     ].each { |e|
       puts "Crawling #{e}"
       begin
@@ -34,7 +38,10 @@ module StoryUpdater
         article.generate_translations
         article.save
       rescue Exception => ex
-        puts "Failed to crawl/store #{e}: #{ex.message}"
+        if (ex.message != 'Article has not changed')
+          puts "Failed to crawl #{e}: #{ex.message}"
+          puts ex.backtrace.join("\n")
+        end
       end
     }
     puts "done."

@@ -12,7 +12,8 @@ class ArticlesController < ApplicationController
        "Frankfurter Allgemeine",
        "NRC",
        "Kommersant",
-       "Dagens Nyheter"
+       "Dagens Nyheter",
+       "Aftenposten"
     ]
     @sites = []
     names.each { |n|
@@ -31,4 +32,21 @@ class ArticlesController < ApplicationController
       @translated = false
     end
   end
+
+  def sport
+    names = [
+       "La Gazzetta dello sport",
+       "L'ÉQUIPE",
+       "SPORT"
+    ]
+    #@article = Article.find(params[:sport])
+    @sites = []
+    names.each { |n|
+      tmp = Article.order(created_at: :desc).find_by(newspaper: n)
+      if tmp != nil
+        @sites = @sites + [tmp]
+      end
+    }
+  end
+
 end

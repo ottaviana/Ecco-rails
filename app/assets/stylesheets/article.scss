@@ -10,6 +10,10 @@
   width: 100%;
 }
 
+.logo {
+  min-height: 150px;
+  background-color: white;
+}
 
 .title, .title > h1 {
   font-family: 'Cinzel', serif;
@@ -21,10 +25,11 @@
   border: 1px solid #cecece;
   padding: 30px 30px;
   margin-bottom: 200px;
-  min-height: 550px;
+  min-height: 750px;
   position: relative;
   background-color: rgba(255, 255, 255, 0.60);
   border-radius: 25px;
+
 
   .flag {
     width: 50px;
@@ -58,6 +63,7 @@
   padding: 20px 20px;
   margin-bottom: 20px;
   min-height: 800px;
+
 
   .bgr-image {
     background-size: cover;

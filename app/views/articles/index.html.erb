@@ -5,7 +5,7 @@
     <div class="top-bar-left">
       <ul class="dropdown menu" data-dropdown-menu>
         <li class="menu-text">Ecco News</li>
-        <li><a href="#">Sport</a></li>
+        <li><a href="/sport">Sport</a></li>
         <li><a href="#">Economy</a></li>
         <li><a href="#">Gossip</a></li>
         <li><a href="#">Whatever</a></li>
@@ -41,7 +41,8 @@ def show_flag(name)
     "Frankfurter Allgemeine" => "Germany.png",
     "NRC" => "Netherlands.png",
     "Kommersant" => "Russia.png",
-    "Dagens Nyheter" => "Sweden.png"
+    "Dagens Nyheter" => "Sweden.png",
+    "Aftenposten"=> "Norway.png"
   }
   result = @flag[name]
   if result
@@ -56,13 +57,15 @@ end
   <% @sites.each do |item| %>
     <div class="column column-block">
       <div class="newspaper-card">
-        <div class="columns small-6 right">
-            <div class= "flag">
+        <!-- <div class="columns small-6 right"> -->
+            <div class="flag">
               <%= image_tag(show_flag(item.newspaper))%>
             </div>
-        </div>
+        <!-- </div> -->
 
-        <%= image_tag("#{item.newspaper}.png", :alt => item.newspaper)%>
+        <div class="logo">
+          <%= image_tag("#{item.newspaper}.png", :alt => item.newspaper)%>
+        </div>
         <% if item.image_url %>
           <div class="bg-image" style="background-image: url(<%= asset_url(item.image_url) %>);"></div>
         <% end %>
