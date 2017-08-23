@@ -1,0 +1,127 @@
+<body class='background'
+  style="background-image: url(<%= asset_url('back_g.png') %>);">
+
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <ul class="dropdown menu" data-dropdown-menu>
+        <li class="menu-text">Ecco News</li>
+        <li><a href="/sport">Sport</a></li>
+        <li><a href="/economy">Economy</a></li>
+        <li><a href="#">Gossip</a></li>
+        <li><a href="#">Whatever</a></li>
+    </div>
+    <div class="top-bar-right">
+      <ul class="menu">
+        <li><input type="search" placeholder="i.e. The Guardian..." id="search-box"></li>
+        <li><button type="button" class="button" onclick="onUserPushedSearchButton()">Search</button></li>
+      </ul>
+    </div>
+  </div>
+
+<br></br>
+<div class="row">
+  <div class="small-12 columns">
+      <div class="title">
+        <h1>Ecco News</h1>
+      </div>
+  </div>
+</div>
+<br></br>
+
+<%
+def show_flag(name)
+  @flag= {
+    "The Guardian"=> "United_Kingdom.png",
+    "Corriere della Sera"=> "Italy.png",
+    "Le Monde" => "France.png",
+    "The Asahi Shimbun" => "Japan.png",
+    "El País" => "Spain.png",
+    "Neue Zürcher Zeitung" => "Switzerland.png",
+    "The Daily Mail" => "United_Kingdom.png",
+    "Frankfurter Allgemeine" => "Germany.png",
+    "NRC" => "Netherlands.png",
+    "Kommersant" => "Russia.png",
+    "Dagens Nyheter" => "Sweden.png",
+    "Aftenposten"=> "Norway.png",
+    "Cumhuriyet" => "Turkey.png",
+    "Independent" => "Ireland.png",
+    "Wienerzeitung" => "Austria.png",
+    "Protothema" => "Greece.png",
+    "Diario de Noticias" => "Portugal.png",
+    "Morocco World News" => "Morocco.png",
+    "Berlingske" => "Denmark.png",
+    "Fakt"=>"Poland.png",
+    "Adevarul"=>"Romania.png"
+  }
+  result = @flag[name]
+  if result
+    return result
+  else
+    return ""
+  end
+end
+%>
+
+<div class="row small-up-1 medium-up-2 large-up-3">
+  <% @sites.each do |item| %>
+    <div class="column column-block">
+      <div class="newspaper-card">
+        <!-- <div class="columns small-6 right"> -->
+            <div class="flag">
+              <%= image_tag(show_flag(item.newspaper))%>
+            </div>
+        <!-- </div> -->
+
+        <div class="logo">
+          <%= image_tag("#{item.newspaper}.png", :alt => item.newspaper)%>
+        </div>
+        <% if item.image_url %>
+          <div class="bg-image" style="background-image: url(<%= asset_url(item.image_url) %>);"></div>
+        <% end %>
+
+        <div class="row">
+          <div class="columns small-6">
+            <%= link_to("Translate", href= "/?t=true" , class: "button small") %>
+          </div>
+        </div>
+            <%= link_to item.link, target: "_blank" do %>
+
+
+
+            <% if params["t"] && item.translated_headline != nil %>
+              <h3><%= item.translated_headline %></h3>
+            <% else %>
+              <h3><%= item.headline %></h3>
+            <% end %>
+            <% end %>
+
+
+          <% if params["t"] && item.translated_description != nil %>
+            <p><%=raw truncate(item.translated_description, length: 200, separator: ".", omission: "...") %></p>
+          <% else %>
+            <p><%=raw truncate(item.description, length: 200, separator: ".", omission: "...") %></p>
+          <% end %>
+
+
+        <div class="row">
+          <div class="columns small-6 left">
+            <%= link_to("Read More", article_path(item.id), class: "button") %>
+          </div>
+        </div>
+
+        <div class="rounded-social-buttons">
+          <a class="social-button facebook" href="#"></a>
+          <a class="social-button twitter" href="#"></a>
+          <a class="social-button linkedin" href="#"></a>
+          <a class="social-button google-plus" href="#"></a>
+        </div>
+
+
+      </div>
+
+    </div>
+  <% end %>
+  </div>
+</div>
+
+</body>

@@ -1,6 +1,6 @@
 desc "Intended for use on Heroku, re-crawls the newspaper websites"
 
-task :update_stories => :environment do
+task :update_stories, [:name] => :environment do |t, args|
   include StoryUpdater
-  StoryUpdater.update
+  StoryUpdater.update(args[:name])
 end

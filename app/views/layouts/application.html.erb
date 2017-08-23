@@ -6,9 +6,30 @@
 
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearchLite.min.js"></script>
+    <script>
+      var client = algoliasearch('LZ13R3NGNI', '613e2f6c6d517b83d032050dd0a2562f');
+      var index = client.initIndex("dev_article");
+
+      function onUserPushedSearchButton() {
+        index.search(document.getElementById("search-box").value, function(error, content) {
+          var topResults = content.hits.map(function(boh){
+            return boh.objectID;
+          });
+          if (topResults != undefined) {
+            window.location = "/search_results/" + topResults;
+          } else {
+            alert("Sorry, no search results found.")
+          }
+        });
+      }
+    </script>
   </head>
 
   <body>

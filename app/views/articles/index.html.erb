@@ -1,3 +1,125 @@
+<%
+def draw_clouds
+%>
+<!-- Cloudy -->
+<div class="row">
+<div class="element">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 60.7 40" style="enable-background:new 0 0 60.7 40;" xml:space="preserve">
+  <g id="Cloud_1">
+   <g id="White_cloud_1">
+     <path id="XMLID_2_" class="white" d="M47.2,40H7.9C3.5,40,0,36.5,0,32.1l0,0c0-4.3,3.5-7.9,7.9-7.9h39.4c4.3,0,7.9,3.5,7.9,7.9v0 C55.1,36.5,51.6,40,47.2,40z"/>
+     <circle id="XMLID_3_" class="white" cx="17.4" cy="22.8" r="9.3"/>
+     <circle id="XMLID_4_" class="white" cx="34.5" cy="21.1" r="15.6"/>
+      <animateTransform attributeName="transform"
+        attributeType="XML"
+        dur="6s"
+        keyTimes="0;0.5;1"
+        repeatCount="indefinite"
+        type="translate"
+        values="0;5;0"
+        calcMode="linear">
+      </animateTransform>
+   </g>
+   <g id="Gray_cloud_1">
+     <path id="XMLID_6_" class="gray" d="M54.7,22.3H33.4c-3.3,0-6-2.7-6-6v0c0-3.3,2.7-6,6-6h21.3c3.3,0,6,2.7,6,6v0 C60.7,19.6,58,22.3,54.7,22.3z"/>
+     <circle id="XMLID_7_" class="gray" cx="45.7" cy="10.7" r="10.7"/>
+      <animateTransform attributeName="transform"
+        attributeType="XML"
+        dur="6s"
+        keyTimes="0;0.5;1"
+        repeatCount="indefinite"
+        type="translate"
+        values="0;-3;0"
+        calcMode="linear">
+      </animateTransform>
+   </g>
+  </g>
+</svg>
+</div>
+</div>
+<%
+end
+%>
+
+<%
+def draw_rain
+%>
+<!-- Rainy -->
+          <div class="row">
+          <div class="element">
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55.1 60" style="enable-background:new 0 0 55.1 49.5;" xml:space="preserve">
+            <g id="Cloud_2">
+        	    <g id="Rain_2">
+                <path id="rain_2_left" class="white" d="M20.7,46.4c0,1.7-1.4,3.1-3.1,3.1s-3.1-1.4-3.1-3.1c0-1.7,3.1-7.8,3.1-7.8 S20.7,44.7,20.7,46.4z"></path>
+        		    <path id="rain_2_mid" class="white" d="M31.4,46.4c0,1.7-1.4,3.1-3.1,3.1c-1.7,0-3.1-1.4-3.1-3.1c0-1.7,3.1-7.8,3.1-7.8 S31.4,44.7,31.4,46.4z"></path>
+                <path id="rain_2_right" class="white" d="M41.3,46.4c0,1.7-1.4,3.1-3.1,3.1c-1.7,0-3.1-1.4-3.1-3.1c0-1.7,3.1-7.8,3.1-7.8 S41.3,44.7,41.3,46.4z"></path>
+                <animateTransform attributeName="transform"
+                  attributeType="XML"
+                  dur="1s"
+                  keyTimes="0;1"
+                  repeatCount="indefinite"
+                  type="translate"
+                  values="0 0;0 10"
+                  calcMode="linear">
+                </animateTransform>
+                <animate attributeType="CSS"
+                attributeName="opacity"
+                attributeType="XML"
+                dur="1s"
+                keyTimes="0;1"
+                repeatCount="indefinite"
+                values="1;0"
+                calcMode="linear"/>
+        	    </g>
+        	    <g id="White_cloud_2">
+        		    <path id="XMLID_14_" class="white" d="M47.2,34.5H7.9c-4.3,0-7.9-3.5-7.9-7.9l0,0c0-4.3,3.5-7.9,7.9-7.9h39.4c4.3,0,7.9,3.5,7.9,7.9 v0C55.1,30.9,51.6,34.5,47.2,34.5z"/>
+        		    <circle id="XMLID_13_" class="white" cx="17.4" cy="17.3" r="9.3"/>
+        		    <circle id="XMLID_10_" class="white" cx="34.5" cy="15.6" r="15.6"/>
+        	    </g>
+            </g>
+          </svg>
+          </div>
+          </div>
+<%
+end
+%>
+
+<!-- Sunny -->
+<%
+def draw_sunny
+%>
+          <div class="row">
+          <div class="element">
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 44.9 44.9" style="enable-background:new 0 0 44.9 44.9;" xml:space="preserve" height="40px" width="40px">
+            <g id="Sun">
+    	        <circle id="XMLID_61_" class="yellow" cx="22.4" cy="22.6" r="11"/>
+              <g>
+              	<path id="XMLID_60_" class="yellow" d="M22.6,8.1h-0.3c-0.3,0-0.6-0.3-0.6-0.6v-7c0-0.3,0.3-0.6,0.6-0.6l0.3,0c0.3,0,0.6,0.3,0.6,0.6 v7C23.2,7.8,22.9,8.1,22.6,8.1z"/>
+              	<path id="XMLID_59_" class="yellow" d="M22.6,36.8h-0.3c-0.3,0-0.6,0.3-0.6,0.6v7c0,0.3,0.3,0.6,0.6,0.6h0.3c0.3,0,0.6-0.3,0.6-0.6v-7 C23.2,37,22.9,36.8,22.6,36.8z"/>
+              	<path id="XMLID_58_" class="yellow" d="M8.1,22.3v0.3c0,0.3-0.3,0.6-0.6,0.6h-7c-0.3,0-0.6-0.3-0.6-0.6l0-0.3c0-0.3,0.3-0.6,0.6-0.6h7 C7.8,21.7,8.1,21.9,8.1,22.3z"/>
+              	<path id="XMLID_57_" class="yellow" d="M36.8,22.3v0.3c0,0.3,0.3,0.6,0.6,0.6h7c0.3,0,0.6-0.3,0.6-0.6v-0.3c0-0.3-0.3-0.6-0.6-0.6h-7 C37,21.7,36.8,21.9,36.8,22.3z"/>
+              	<path id="XMLID_56_" class="yellow" d="M11.4,31.6l0.2,0.3c0.2,0.2,0.2,0.6-0.1,0.8l-5.3,4.5c-0.2,0.2-0.6,0.2-0.8-0.1l-0.2-0.3 c-0.2-0.2-0.2-0.6,0.1-0.8l5.3-4.5C10.9,31.4,11.2,31.4,11.4,31.6z"/>
+              	<path id="XMLID_55_" class="yellow" d="M33.2,13l0.2,0.3c0.2,0.2,0.6,0.3,0.8,0.1l5.3-4.5c0.2-0.2,0.3-0.6,0.1-0.8l-0.2-0.3 c-0.2-0.2-0.6-0.3-0.8-0.1l-5.3,4.5C33,12.4,33,12.7,33.2,13z"/>
+              	<path id="XMLID_54_" class="yellow" d="M11.4,13.2l0.2-0.3c0.2-0.2,0.2-0.6-0.1-0.8L6.3,7.6C6.1,7.4,5.7,7.5,5.5,7.7L5.3,7.9 C5.1,8.2,5.1,8.5,5.4,8.7l5.3,4.5C10.9,13.5,11.2,13.5,11.4,13.2z"/>
+              	<path id="XMLID_53_" class="yellow" d="M33.2,31.9l0.2-0.3c0.2-0.2,0.6-0.3,0.8-0.1l5.3,4.5c0.2,0.2,0.3,0.6,0.1,0.8l-0.2,0.3 c-0.2,0.2-0.6,0.3-0.8,0.1l-5.3-4.5C33,32.5,33,32.1,33.2,31.9z"/>
+                <animate attributeType="CSS"
+                  attributeName="opacity"
+                  attributeType="XML"
+                  dur="0.5s"
+                  keyTimes="0;0.5;1"
+                  repeatCount="indefinite"
+                  values="1;0.6;1"
+                  calcMode="linear"/>
+              </g>
+            </g>
+          </svg>
+          </div>
+          </div>
+<%
+end
+%>
+
+
 <body class='background'
   style="background-image: url(<%= asset_url('back_g.png') %>);">
 
@@ -6,17 +128,18 @@
       <ul class="dropdown menu" data-dropdown-menu>
         <li class="menu-text">Ecco News</li>
         <li><a href="/sport">Sport</a></li>
-        <li><a href="#">Economy</a></li>
+        <li><a href="/economy">Economy</a></li>
         <li><a href="#">Gossip</a></li>
         <li><a href="#">Whatever</a></li>
     </div>
     <div class="top-bar-right">
       <ul class="menu">
-        <li><input type="search" placeholder="i.e. The Guardian..."></li>
-        <li><button type="button" class="button">Search</button></li>
+        <li><input type="search" placeholder="i.e. The Guardian..." id="search-box"></li>
+        <li><button type="button" class="button" onclick="onUserPushedSearchButton()">Search</button></li>
       </ul>
     </div>
   </div>
+
 
 <br></br>
 <div class="row">
@@ -42,7 +165,16 @@ def show_flag(name)
     "NRC" => "Netherlands.png",
     "Kommersant" => "Russia.png",
     "Dagens Nyheter" => "Sweden.png",
-    "Aftenposten"=> "Norway.png"
+    "Aftenposten"=> "Norway.png",
+    "Cumhuriyet" => "Turkey.png",
+    "Independent" => "Ireland.png",
+    "Wienerzeitung" => "Austria.png",
+    "Protothema" => "Greece.png",
+    "Diario de Noticias" => "Portugal.png",
+    "Morocco World News" => "Morocco.png",
+    "Berlingske" => "Denmark.png",
+    "Fakt"=>"Poland.png",
+    "Adevarul"=>"Romania.png"
   }
   result = @flag[name]
   if result
@@ -53,33 +185,127 @@ def show_flag(name)
 end
 %>
 
+<%
+
+def weather(city)
+  url = "http://api.openweathermap.org/data/2.5/weather?q=#{city}&appid=a89d3d7cedfca25a5d239434e137a507"
+  request = Curl.get(url) do |curl|
+  end
+  response = request.body_str
+  return JSON.parse(response)['weather'][0]['main']
+  #return JSON.parse(response)['main']['temp']
+end
+
+def temperature(city)
+  url = "http://api.openweathermap.org/data/2.5/weather?q=#{city}&appid=a89d3d7cedfca25a5d239434e137a507"
+  request = Curl.get(url) do |curl|
+  end
+  response = request.body_str
+  return JSON.parse(response)['main']['temp']
+end
+
+
+def newspaper_to_city(newspaper)
+  @capitals = {
+    "The Guardian" => "London",
+    "Corriere della Sera" => "Milan",
+    "Le Monde" => "Paris",
+    "The Asahi Shimbun" => "Tokyo",
+    "El País" => "Madrid",
+    "Neue Zürcher Zeitung" => "Zurich",
+    "The Daily Mail" => "London",
+    "Frankfurter Allgemeine" => "Frankfurt",
+    "NRC" => "Amsterdam",
+    "Kommersant" => "Moscow",
+    "Dagens Nyheter" => "Stockholm",
+    "Aftenposten"=> "Oslo",
+    "Cumhuriyet" => "Istambul",
+    "Independent" => "Dublin",
+    "Wienerzeitung" => "Vien",
+    "Protothema" => "Athen",
+    "Diario de Noticias" => "Lisboa",
+    "Morocco World News" => "Rabat",
+    "Berlingske" => "Copenhagen",
+    "Fakt"=>"Warsaw",
+    "Adevarul"=>"Bucharest"
+  }
+  city = @capitals[newspaper]
+  if city
+    return city
+  else
+    return ""
+  end
+end
+
+def kelvin_to_celsius(kelvin)
+  celsius = (kelvin - 273.15).round
+  #return celsius
+  return "#{celsius}˚"
+end
+%>
+
 <div class="row small-up-1 medium-up-2 large-up-3">
   <% @sites.each do |item| %>
     <div class="column column-block">
-      <div class="newspaper-card">
+      <div class="newspaper-card" id="<%= item.id %>" onclick="$('#settings-modal-<%= item.id %>').foundation('open');">
         <!-- <div class="columns small-6 right"> -->
-            <div class="flag">
-              <%= image_tag(show_flag(item.newspaper))%>
-            </div>
+      <div class="row">
+        <div class="columns small-6">
+          <div class="flag">
+            <%= image_tag(show_flag(item.newspaper))%>
+          </div>
+        </div>
+
+
+        <div class="temperature">
+          <%
+             kelvin = temperature(newspaper_to_city(item.newspaper))
+             celsius = kelvin_to_celsius(kelvin)
+             #celsius = kelvin_to_celsius(temperature(newspaper_to_city(item.newspaper)))
+          %>
+
+          <%= celsius %>
+        </div>
+
+        <div class="columns small-6">
+          <div class="city">
+
+            <%
+               city = newspaper_to_city(item.newspaper)
+            %>
+            <%= city %>
+            <%
+               w = weather(city)
+               draw_clouds() if w == "Clouds"
+               draw_rain() if w == "Rain"
+               draw_sunny() if w == "Clear"
+               draw_clouds() if w == "Haze"
+            %>
+          </div>
+        </div>
+
+</div>
+
+
         <!-- </div> -->
 
         <div class="logo">
           <%= image_tag("#{item.newspaper}.png", :alt => item.newspaper)%>
         </div>
         <% if item.image_url %>
-          <div class="bg-image" style="background-image: url(<%= asset_url(item.image_url) %>);"></div>
+          <div class="bg-image" style="background-image: url('<%= asset_url(item.image_url) %>');"></div>
         <% end %>
 
         <div class="row">
           <div class="columns small-6">
-            <%= link_to("Translate", href= "/?t=true" , class: "button small") %>
+            <%= link_to("Translate", href= "/?t=#{item.id}##{item.id}" , class: "button small") %>
           </div>
         </div>
             <%= link_to item.link, target: "_blank" do %>
 
 
 
-            <% if params["t"] && item.translated_headline != nil %>
+            <% if params["t"] == item.id.to_s && item.translated_headline != nil %>
               <h3><%= item.translated_headline %></h3>
             <% else %>
               <h3><%= item.headline %></h3>
@@ -87,20 +313,66 @@ end
             <% end %>
 
 
-          <% if params["t"] && item.translated_description != nil %>
-            <p><%=raw truncate(item.translated_description, length: 200, separator: ".", omission: "...") %></p>
+          <% if params["t"] == item.id.to_s && item.translated_description != nil %>
+            <p><%=raw truncate(item.translated_description, length: 100, separator: ".", omission: "...") %></p>
           <% else %>
-            <p><%=raw truncate(item.description, length: 200, separator: ".", omission: "...") %></p>
+            <p><%=raw truncate(item.description, length: 100, separator: ".", omission: "...") %></p>
           <% end %>
 
 
         <div class="row">
           <div class="columns small-6 left">
-            <%= link_to("Read More", article_path(item.id), class: "button") %>
+            <%= link_to("Read More", article_path(item.id), class: "button", onclick: "event.stopPropagation()") %>
           </div>
         </div>
 
+        <i class="fa fa-thermometer-full" aria-hidden="true"></i>
 
+
+
+        <div class="row">
+          <div class="columns">
+            <div class="rounded-social-buttons">
+              <a class="social-button facebook" href="#"></a>
+              <a class="social-button twitter" href="#"></a>
+              <a class="social-button linkedin" href="#"></a>
+              <a class="social-button google-plus" href="#"></a>
+            </div>
+          </div>
+
+
+
+         <div class="reveal" id="settings-modal-<%= item.id %>" data-reveal>
+            <div class="newspaper-card" id="<%= item.id %>">
+
+              <%= image_tag(show_flag(item.newspaper))%>
+              <%= image_tag("#{item.newspaper}.png", :alt => item.newspaper)%>
+              <% if item.image_url %>
+                <div class="bg-image" style="background-image: url(<%= asset_url(item.image_url) %>);"></div>
+              <% end %>
+              <%= link_to("Translate", href= "/?t=#{item.id}##{item.id}" , class: "button small") %>
+              <%= link_to item.link, target: "_blank" do %>
+              <% end %>
+              <%= link_to("Read More", article_path(item.id), class: "button") %>
+
+              <% if params["t"] == item.id.to_s && item.translated_headline != nil %>
+                <h3><%= item.translated_headline %></h3>
+              <% else %>
+                <h3><%= item.headline %></h3>
+              <% end %>
+
+              <% if params["t"] == item.id.to_s && item.translated_description != nil %>
+              <p><%=raw truncate(item.translated_description, length: 200, separator: ".", omission: "...") %></p>
+              <% else %>
+              <p><%=raw truncate(item.description, length: 200, separator: ".", omission: "...") %></p>
+              <% end %>
+
+              <button class="close-button" data-close aria-label="Close reveal" type="button">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+          </div>
+        </div>
       </div>
 
     </div>

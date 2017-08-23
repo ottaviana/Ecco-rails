@@ -15,9 +15,11 @@
 <%
 def show_flag(name)
   @flag= {
-    "La Gazzetta dello sport"=> "Italy.png",
-    "L'ÉQUIPE"=> "France.png",
-    "SPORT"=> "Spain.png"
+    "Il sole" => "Italy.png",
+    "Financial Times" => "United_Kingdom.png",
+    "Bloomberg" => "United_States.png",
+    "Forbes US" => "United_States.png",
+    "Forbes EU" => "Europe.png"
   }
   result = @flag[name]
   if result
@@ -46,7 +48,7 @@ end
 
       <div class="row">
         <div class="columns small-6">
-          <%= link_to("Translate", href= "/sport/?t=true" , class: "button small") %>
+          <%= link_to("Translate", href= "/economy/?t=true" , class: "button small") %>
         </div>
       </div>
           <%= link_to item.link, target: "_blank" do %>

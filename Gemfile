@@ -9,7 +9,7 @@ gem 'easy_translate'
 # API for translation
 gem 'foundation-rails'
 # Foundation for rails
-gem 'ecco', git: 'https://github.com/ottaviana/gem_ecco.git'
+gem 'ecco' ##, git: 'https://github.com/ottaviana/gem_ecco.git'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
 
@@ -43,6 +43,12 @@ group :development, :test do
   gem 'byebug', platform: :mri
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+  # For the elastic search
+  gem 'algoliasearch'
+
+  gem "algoliasearch-rails"
+
+  gem 'json'
 end
 
 group :production do
@@ -57,9 +63,9 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  gem 'pry-rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-gem 'pry'
