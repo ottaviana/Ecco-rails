@@ -46,7 +46,13 @@ class ArticlesController < ApplicationController
     names = [
        "La Gazzetta dello sport",
        "L'ÉQUIPE",
-       "SPORT"
+       "SPORT",
+       "Sports Illustrated",
+       "Sport Allgemein",
+       "Sport.ch",
+       "Sky Sport",
+       "Sport Express",
+       "Japan Sport"
     ]
     @sites = []
     names.each { |n|
@@ -63,7 +69,8 @@ class ArticlesController < ApplicationController
        "Financial Times",
        "Bloomberg",
        "Forbes US",
-       "Forbes EU"
+       "Forbes EU",
+       "Expansion"
     ]
     @sites = []
     names.each { |n|

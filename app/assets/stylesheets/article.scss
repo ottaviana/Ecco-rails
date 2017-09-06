@@ -152,6 +152,7 @@ $white: white;
 
 .rounded-social-buttons {
   text-align: center;
+  padding-top: 50px;
 
   .social-button {
     display: inline-block;
@@ -160,7 +161,7 @@ $white: white;
     width: $social-button-size;
     height: $social-button-size;
     border: $social-button-border-width solid transparent;
-    padding: 0;
+    padding: 0px;
     text-decoration: none;
     text-align: center;
     color: $white;

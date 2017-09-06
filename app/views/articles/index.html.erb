@@ -1,4 +1,16 @@
 <%
+# http://localhost:3000/foo?a=b&c=d
+#
+# params["a"] = "b"
+# params["c"] = "d"
+
+t_param = params["t"]
+if t_param == nil
+  to_translate = []
+else
+  to_translate = t_param.split(",")   # is now an array of item.ids to translate
+end
+
 def draw_clouds
 %>
 <!-- Cloudy -->
@@ -44,6 +56,7 @@ end
 <%
 def draw_rain
 %>
+
 <!-- Rainy -->
           <div class="row">
           <div class="element">
@@ -187,24 +200,6 @@ end
 
 <%
 
-def weather(city)
-  url = "http://api.openweathermap.org/data/2.5/weather?q=#{city}&appid=a89d3d7cedfca25a5d239434e137a507"
-  request = Curl.get(url) do |curl|
-  end
-  response = request.body_str
-  return JSON.parse(response)['weather'][0]['main']
-  #return JSON.parse(response)['main']['temp']
-end
-
-def temperature(city)
-  url = "http://api.openweathermap.org/data/2.5/weather?q=#{city}&appid=a89d3d7cedfca25a5d239434e137a507"
-  request = Curl.get(url) do |curl|
-  end
-  response = request.body_str
-  return JSON.parse(response)['main']['temp']
-end
-
-
 def newspaper_to_city(newspaper)
   @capitals = {
     "The Guardian" => "London",
@@ -219,7 +214,7 @@ def newspaper_to_city(newspaper)
     "Kommersant" => "Moscow",
     "Dagens Nyheter" => "Stockholm",
     "Aftenposten"=> "Oslo",
-    "Cumhuriyet" => "Istambul",
+    "Cumhuriyet" => "Istanbul",
     "Independent" => "Dublin",
     "Wienerzeitung" => "Vien",
     "Protothema" => "Athen",
@@ -237,11 +232,6 @@ def newspaper_to_city(newspaper)
   end
 end
 
-def kelvin_to_celsius(kelvin)
-  celsius = (kelvin - 273.15).round
-  #return celsius
-  return "#{celsius}˚"
-end
 %>
 
 <div class="row small-up-1 medium-up-2 large-up-3">
@@ -256,26 +246,22 @@ end
           </div>
         </div>
 
-
+        <div class="columns small-6">
         <div class="temperature">
           <%
-             kelvin = temperature(newspaper_to_city(item.newspaper))
-             celsius = kelvin_to_celsius(kelvin)
-             #celsius = kelvin_to_celsius(temperature(newspaper_to_city(item.newspaper)))
+             city = newspaper_to_city(item.newspaper)
+             weather_record = Weather.find_by(city: city)
           %>
 
-          <%= celsius %>
+          <%= city %> <%= weather_record.temperature %>˚
         </div>
+      </div>
+
 
         <div class="columns small-6">
           <div class="city">
-
             <%
-               city = newspaper_to_city(item.newspaper)
-            %>
-            <%= city %>
-            <%
-               w = weather(city)
+               w = weather_record.weather
                draw_clouds() if w == "Clouds"
                draw_rain() if w == "Rain"
                draw_sunny() if w == "Clear"
@@ -283,8 +269,8 @@ end
             %>
           </div>
         </div>
+      </div>
 
-</div>
 
 
         <!-- </div> -->
@@ -296,16 +282,12 @@ end
           <div class="bg-image" style="background-image: url('<%= asset_url(item.image_url) %>');"></div>
         <% end %>
 
-        <div class="row">
-          <div class="columns small-6">
-            <%= link_to("Translate", href= "/?t=#{item.id}##{item.id}" , class: "button small") %>
-          </div>
-        </div>
+
             <%= link_to item.link, target: "_blank" do %>
 
 
 
-            <% if params["t"] == item.id.to_s && item.translated_headline != nil %>
+            <% if to_translate.include?(item.id.to_s) && item.translated_headline != nil %>
               <h3><%= item.translated_headline %></h3>
             <% else %>
               <h3><%= item.headline %></h3>
@@ -313,7 +295,7 @@ end
             <% end %>
 
 
-          <% if params["t"] == item.id.to_s && item.translated_description != nil %>
+          <% if to_translate.include?(item.id.to_s) && item.translated_description != nil %>
             <p><%=raw truncate(item.translated_description, length: 100, separator: ".", omission: "...") %></p>
           <% else %>
             <p><%=raw truncate(item.description, length: 100, separator: ".", omission: "...") %></p>
@@ -324,11 +306,14 @@ end
           <div class="columns small-6 left">
             <%= link_to("Read More", article_path(item.id), class: "button", onclick: "event.stopPropagation()") %>
           </div>
+
+          <div class="columns small-6">
+            <%
+            new_to_translate = (to_translate + [item.id]).join(',')
+            %>
+            <%= link_to("Translate", href="/?t=#{new_to_translate}##{item.id}" , class: "button") %>
+          </div>
         </div>
-
-        <i class="fa fa-thermometer-full" aria-hidden="true"></i>
-
-
 
         <div class="row">
           <div class="columns">
@@ -341,7 +326,7 @@ end
           </div>
 
 
-
+<!-- From here Reveal -->
          <div class="reveal" id="settings-modal-<%= item.id %>" data-reveal>
             <div class="newspaper-card" id="<%= item.id %>">
 
@@ -355,13 +340,13 @@ end
               <% end %>
               <%= link_to("Read More", article_path(item.id), class: "button") %>
 
-              <% if params["t"] == item.id.to_s && item.translated_headline != nil %>
+              <% if to_translate.include?(item.id.to_s) && item.translated_headline != nil %>
                 <h3><%= item.translated_headline %></h3>
               <% else %>
                 <h3><%= item.headline %></h3>
               <% end %>
 
-              <% if params["t"] == item.id.to_s && item.translated_description != nil %>
+              <% if to_translate.include?(item.id.to_s) && item.translated_description != nil %>
               <p><%=raw truncate(item.translated_description, length: 200, separator: ".", omission: "...") %></p>
               <% else %>
               <p><%=raw truncate(item.description, length: 200, separator: ".", omission: "...") %></p>
@@ -374,7 +359,7 @@ end
           </div>
         </div>
       </div>
-
+<!-- TO HERE REVEAL -->
     </div>
   <% end %>
   </div>

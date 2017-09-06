@@ -35,7 +35,14 @@ module StoryUpdater
         :morocco,
         :berlingske,
         :fakt,
-        :adevarul
+        :adevarul,
+        :sports_illustrated,
+        :sport_allgemein,
+        :sport_ch,
+        :sky_sport,
+        :sport_express,
+        :japan_sport,
+        :expansion
       ]
     end
 
@@ -55,7 +62,7 @@ module StoryUpdater
                        image_url: item.image_url,
                        article: item.article)
 
-        # article.generate_translations
+        article.generate_translations
         article.save
       rescue Exception => ex
         if (ex.message != 'Article has not changed')
