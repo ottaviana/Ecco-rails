@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/ottaviana/gem_ecco.git
+  revision: a08022f794c06aecb15a5f846a1454ac61a0d317
+  specs:
+    ecco (0.1.0)
+      curb (~> 0.9)
+      nokogiri (~> 1.7)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -66,9 +74,6 @@ GEM
       json
       thread
       thread_safe
-    ecco (0.1.0)
-      curb (~> 0.9)
-      nokogiri (~> 1.7)
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.18)
@@ -202,7 +207,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   easy_translate
-  ecco
+  ecco!
   foundation-rails
   jbuilder (~> 2.5)
   jquery-rails

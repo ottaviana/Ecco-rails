@@ -9,7 +9,7 @@ gem 'easy_translate'
 # API for translation
 gem 'foundation-rails'
 # Foundation for rails
-gem 'ecco' ##, git: 'https://github.com/ottaviana/gem_ecco.git'
+gem 'ecco', git: 'https://github.com/ottaviana/gem_ecco.git'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
 
