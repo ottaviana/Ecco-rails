@@ -1,10 +1,12 @@
 task :update_weather => :environment do
   def fetch_weather(city)
     api_key = ENV["OPENWEATHERMAP_API_KEY"]
-    url = "http://api.openweathermap.org/data/2.5/weather?q=#{city}&appid=#{api_key}"
-    request = Curl.get(url)
-    response = request.body_str
-    return JSON.parse(response)
+    response = Curl.get(
+      "http://api.openweathermap.org/data/2.5/weather",
+      { q: city, appid: api_key }
+    )
+    response_body = response.body_str
+    return JSON.parse(response_body)
   end
 
   def extract_temp_in_kelvin(response)
