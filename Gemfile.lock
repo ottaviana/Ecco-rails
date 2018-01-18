@@ -119,6 +119,8 @@ GEM
       pry (>= 0.10.4)
     puma (3.9.1)
     rack (2.0.3)
+    rack-mini-profiler (0.10.5)
+      rack (>= 1.2.0)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.0.4)
@@ -216,6 +218,7 @@ DEPENDENCIES
   pg
   pry-rails
   puma (~> 3.0)
+  rack-mini-profiler
   rails (~> 5.0.1)
   rails_12factor
   sass-rails (~> 5.0)

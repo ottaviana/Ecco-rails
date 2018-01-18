@@ -1,6 +1,23 @@
 <body class='background'
   style="background-image: url(<%= asset_url('back_g.png') %>);">
 
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <ul class="dropdown menu" data-dropdown-menu>
+        <li><a>International</a></li>
+        <li><a href="/sport">Sport</a></li>
+        <li><a href="/economy">Economy</a></li>
+        <li><a href="#">Gossip</a></li>
+        <li><a href="#">Whatever</a></li>
+    </div>
+    <div class="top-bar-right">
+      <ul class="menu">
+        <li><input type="search" placeholder="i.e. The Guardian..." id="search-box"></li>
+        <li><button type="button" class="button" onclick="onUserPushedSearchButton()">Search</button></li>
+      </ul>
+    </div>
+  </div>
+
 <div class="row">
   <div class="small-12 columns">
     <div class= "panel">
